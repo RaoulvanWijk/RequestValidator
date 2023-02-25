@@ -45,7 +45,7 @@ class Validator implements ValidatorInterface
                 $rule = explode(':', $rule, 2);
                 $ruleName = $rule[0];
                 $params = $rule[1] ?? '';
-                $ruleClass = "Raoul\\Validator\\Rules\\".strtoupper($ruleName);
+                $ruleClass = "Raoul\\Validator\\Rules\\".str_replace(' ', '', ucwords(str_replace('_', ' ', $ruleName)));
                 if(!class_exists($ruleClass)) {
                     throw new RuleException("Rule {$ruleName} does not exist");
                 }
@@ -60,9 +60,8 @@ class Validator implements ValidatorInterface
                   }
                 }
             }
-
-
         }
+
         if($this->hasErrors()) {
             throw new ValidationException($this->getErrors(), $this->getMessages());
         }
