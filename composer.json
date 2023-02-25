@@ -1,0 +1,16 @@
+{
+    "name": "raoul/validator",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Raoul\\Validator\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Raoul van Wijk",
+            "email": "raoul.van.wijk05@gmail.com"
+        }
+    ],
+    "require": {}
+}
