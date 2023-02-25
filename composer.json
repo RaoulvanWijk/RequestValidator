@@ -1,6 +1,17 @@
 {
     "name": "raoul/validator",
     "description": "A simple validator for PHP",
+    "type": "library",
+    "keywords": [
+        "validator",
+        "validation",
+        "validation library",
+        "validation tool",
+        "validation package",
+        "validation library for PHP",
+        "validation tool for PHP",
+        "validation package for PHP"
+    ],
     "license": "MIT",
     "autoload": {
         "psr-4": {
