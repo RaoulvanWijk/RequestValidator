@@ -39,7 +39,7 @@ class Validator implements ValidatorInterface
             }
 
             foreach ($rules as $rule) {
-                $rule = explode(':', $rule);
+                $rule = explode(':', $rule, 2);
                 $ruleName = $rule[0];
                 $params = $rule[1] ?? '';
                 $ruleClass = "Raoul\\Validator\\Rules\\".strtoupper($ruleName);
