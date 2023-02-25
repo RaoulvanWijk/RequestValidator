@@ -16,8 +16,11 @@ class Validator implements ValidatorInterface
     {
         $this->rules = $this->getRules();
     }
-
   /**
+   * @param $data
+   * @param array|string $rules
+   * @param $messages
+   * @return $this
    * @throws RuleException
    * @throws ValidationException
    */
@@ -72,16 +75,26 @@ class Validator implements ValidatorInterface
         return $this->errors;
     }
 
-    public function getError($key)
+  /**
+   * @param $key
+   * @return mixed|null
+   */
+    public function getError($key): mixed
     {
         return $this->errors[$key] ?? null;
     }
 
+  /**
+   * @return bool
+   */
     public function hasErrors(): bool
     {
         return !empty($this->errors);
     }
 
+  /**
+   * @return array
+   */
     public function getRules(): array
     {
         if(method_exists($this, 'rules')) {
@@ -90,16 +103,26 @@ class Validator implements ValidatorInterface
         return $this->rules;
     }
 
-    public function getRule($key)
+  /**
+   * @param $key
+   * @return mixed|null
+   */
+    public function getRule($key): mixed
     {
         return $this->rules[$key] ?? null;
     }
 
+  /**
+   * @return bool
+   */
     public function hasRules(): bool
     {
         return !empty($this->rules);
     }
 
+  /**
+   * @return array
+   */
     public function getMessages(): array
     {
         if(method_exists($this, 'messages')) {
@@ -108,11 +131,18 @@ class Validator implements ValidatorInterface
         return $this->messages;
     }
 
+  /**
+   * @param $key
+   * @return mixed|null
+   */
     public function getMessage($key)
     {
         return $this->messages[$key] ?? null;
     }
 
+  /**
+   * @return bool
+   */
     public function hasMessages(): bool
     {
         return !empty($this->messages);
