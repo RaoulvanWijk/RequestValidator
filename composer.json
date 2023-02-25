@@ -1,5 +1,6 @@
 {
     "name": "raoul/validator",
+    "description": "A simple validator for PHP",
     "license": "MIT",
     "autoload": {
         "psr-4": {
