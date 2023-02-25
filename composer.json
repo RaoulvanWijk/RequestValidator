@@ -1,5 +1,5 @@
 {
-    "name": "raoul/validator",
+    "name": "raoul/php-validator",
     "description": "A simple validator for PHP",
     "type": "library",
     "keywords": [
