@@ -30,14 +30,14 @@ Class CustomValidator extends Validator
     public function rules()
     {
         return [
-            // Youre rules go here
+            // Your rules go here
         ];
     }
 
     public function messages()
     {
         return [
-            // Youre custom messages go here
+            // Your custom messages go here
         ];
     }
 }
