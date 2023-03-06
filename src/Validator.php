@@ -49,7 +49,12 @@ class Validator implements ValidatorInterface
                 if(!class_exists($ruleClass)) {
                     throw new RuleException("Rule {$ruleName} does not exist");
                 }
-                $rule = new $ruleClass($field, $data[$field] ?? null, explode(',', $params), $data);
+                if(is_array($data)) {
+                  $property = $data[$field] ?? null;
+                } else {
+                  $property = $data->{$field} ?? null;
+                }
+                $rule = new $ruleClass($field, $property ?? null, explode(',', $params), $data);
                 if(!$rule->validate()) {
                   if($this->getMessage($field.'.'.$ruleName)) {
                     $this->errors[$field][] = $this->getMessage($field.'.'.$ruleName);
